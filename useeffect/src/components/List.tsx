@@ -41,11 +41,15 @@ export const List = () => {
 
   return (
     <>
-      {isLoading && <p>Loading...</p>}
-      {hasError && <p>Something went wrong...</p>}
-      {data?.map((o) => (
-        <p key={o.id} className='name-box'>{o.name}</p>
-      ))}
+      <div className='users-box'>
+        {isLoading && <p>Loading...</p>}
+        {hasError && <p>Something went wrong...</p>}
+        {data?.map((o) => (
+          <button key={o.id} className='name-box'>
+            {o.name}
+          </button>
+        ))}
+      </div>
     </>
   )
 }
