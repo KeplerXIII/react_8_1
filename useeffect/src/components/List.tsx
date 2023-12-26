@@ -19,15 +19,16 @@ export const List = () => {
       <div className='users-box'>
         {isLoading && <p>Loading...</p>}
         {hasError && <p>Something went wrong...</p>}
-        {data && data.map((o) => (
-          <button
-            key={o.id}
-            className='name-box'
-            onClick={() => handleButtonClick({ id: o.id, name: o.name })}
-          >
-            {o.name}
-          </button>
-        ))}
+        {data &&
+          data.map((o) => (
+            <button
+              key={o.id}
+              className='name-box'
+              onClick={() => handleButtonClick({ id: o.id, name: o.name })}
+            >
+              {o.name}
+            </button>
+          ))}
       </div>
       {selectedUser && <Details info={selectedUser} />}
     </>
