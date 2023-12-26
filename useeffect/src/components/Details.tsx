@@ -8,11 +8,11 @@ export const Details: React.FC<DetailsProps> = ({ info }) => {
 
   return (
     <>
-      {isLoading && <p>Loading...</p>}
-      {hasError && <p>Something went wrong...</p>}
       {data && (
         <div className='detailed-box'>
-          <img src={data.avatar} alt={data.name}></img>
+          {isLoading && <p>Loading...</p>}
+          {hasError && <p>Something went wrong...</p>}
+          <img key={apiUrl} src={data.avatar} alt={data.name}></img>
           <p>Name: {data.name}</p>
           <p>City: {data.details.city}</p>
           <p>Company: {data.details.company}</p>
