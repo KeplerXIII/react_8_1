@@ -1,8 +1,3 @@
-export type User = {
-  id: number
-  name: string
-}
-
 export type DetailedUser = {
   id: number
   name: string
@@ -13,6 +8,8 @@ export type DetailedUser = {
     position: string
   }
 }
+
+export type User = Pick<DetailedUser, 'id' | 'name'>
 
 export type DetailsProps = {
   info: User
