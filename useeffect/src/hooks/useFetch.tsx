@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { FetchData } from '../models'
 
-export const useFetch = (url: string) => {
+export const useFetch = <T,>(url: string): FetchData<T> => {
   const [data, setData] = useState()
   const [isLoading, setLoading] = useState(false)
   const [hasError, setError] = useState<Error | null>(null)

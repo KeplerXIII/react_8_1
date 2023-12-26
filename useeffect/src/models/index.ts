@@ -21,5 +21,5 @@ export type DetailsProps = {
 export type FetchData<T> = {
   data: T | undefined
   isLoading: boolean
-  error: Error | null
+  hasError: Error | null
 }
